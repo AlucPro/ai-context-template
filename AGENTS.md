@@ -1,66 +1,8 @@
-# Agent Instructions
+# Agents.md — AI 操作指南
 
-This file is the default entrypoint for AI coding agents working in this repository.
+> 本文件是给 AI（Claude、Codex 等）阅读的知识库操作手册。
+> 在对知识库进行任何读写操作前，请先阅读本文件。
 
-## Collaboration Goal
-
-Help maintain a small, readable, reusable template for AI coding context. Prioritize clarity, low ceremony, and practical reuse over broad documentation.
-
-## Default Behavior
-
-- Read `README.md` first to understand the repository purpose.
-- Read the relevant SOP before executing a task.
-- Keep changes focused on the user's request.
-- Prefer small, explicit edits over broad restructuring.
-- Preserve the minimal template shape unless there is a concrete need to evolve it.
-- Explain important trade-offs briefly when behavior or structure changes.
-
-## Task Flow
-
-For non-trivial tasks, follow `sop/task-intake.md`:
-
-1. Identify the task goal.
-2. Extract constraints and success criteria.
-3. Check whether required context is missing.
-4. Break the work into a short roadmap.
-5. Execute only after the path is clear.
-6. Report what changed and how it was verified.
-
-## Output Style
-
-- Be direct and specific.
-- Use concise Markdown.
-- Lead with results when reporting completed work.
-- Include file paths and commands when they help the user verify the work.
-- Avoid generic motivational language and vague summaries.
-
-## Boundaries
-
-- Do not add future-facing directories without a documented trigger from `evolution/template-roadmap.md`.
-- Do not place private project knowledge in this public template.
-- Do not turn `AGENTS.md` into a full project manual.
-- Do not duplicate SOP content here; link to the relevant SOP instead.
-- Do not invent build, test, or deployment commands. Mark unknown commands as project-specific until confirmed.
-
-## Common Commands
-
-This template does not require a build step.
-
-Project-specific repositories created from this template should fill in commands such as:
-
-```sh
-# install dependencies
-
-# run tests
-
-# run linting
-
-# start local development
-```
-
-## Reference Documents
-
-- `sop/README.md` for SOP authoring rules.
-- `sop/task-intake.md` for task intake and execution.
-- `evolution/template-roadmap.md` for deciding when the template should grow.
-
+1. 这个目录`.ai-context`，存放与AI所有的上下文，AI 需要以这个目录下的文档作为第一参考。
+2. `.ai-context/SOP` 目录存放标准行为文档，当我指定使用某个行为文档时，再去读取响应文档，平时不需要访问和读取该 SOP 目录下文档。
+3. `.ai-context/CONTENT`目录下，存放我与AI交谈的历史任务，文件名会按照数字编号命名。这个目录下的每个文件头部，都有状态信息`STATUS`，如果状态标记为`archived`或`已归档`，则无需再阅读文档后面的内容，除非我在命令中强制指定阅读。
