@@ -6,3 +6,9 @@
 1. 这个目录`.ai-context`，存放与AI所有的上下文，AI 需要以这个目录下的文档作为第一参考。
 2. `.ai-context/SOP` 目录存放标准行为文档，当我指定使用某个行为文档时，再去读取响应文档，平时不需要访问和读取该 SOP 目录下文档。
 3. `.ai-context/CONTENT`目录下，存放我与AI交谈的历史任务，文件名会按照数字编号命名。这个目录下的每个文件头部，都有状态信息`STATUS`，如果状态标记为`archived`或`已归档`，则无需再阅读文档后面的内容，除非我在命令中强制指定阅读。
+
+ffmpeg -i help-add-list.mov -vf "fps=10,scale=800:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_c
+olors=96[p];[s1][p]paletteuse" help-add-list.gif
+
+ffmpeg -i help-add-list.mov -vf "fps=10,scale=800:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s
+1][p]paletteuse" help-add-list.gif
