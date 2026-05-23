@@ -5,7 +5,7 @@ STATUS: 使用中
 ## ROADMAP V1
 
 这是V1版本的roadmap。
-这是一个 example文件。
+每完成一个 item,需要在前面加一个 [x].
 
 ### Action
 
